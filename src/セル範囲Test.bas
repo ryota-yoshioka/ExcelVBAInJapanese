@@ -38,17 +38,17 @@ Private Sub TestインデントGet()
     On Error GoTo TestFail
     
     'Arrange:
-    Dim handle As Range
-    Set handle = Worksheets("Sheet1").Range("A1:A1")
-    Dim target As New セル範囲
-    target.初期化 handle
+    Dim ハンドル As Range
+    Set ハンドル = Worksheets("Sheet1").Range("A1:A1")
+    Dim ラッパー As New セル範囲
+    ラッパー.初期化 ハンドル
     
     'Act:
     'Assert:
-    target.インデント = True
-    Assert.AreEqual handle.AddIndent, True
-    target.インデント = False
-    Assert.AreEqual handle.AddIndent, False
+    ラッパー.インデント = True
+    Assert.AreEqual ハンドル.AddIndent, True
+    ラッパー.インデント = False
+    Assert.AreEqual ハンドル.AddIndent, False
     
 TestExit:
     '@Ignore UnhandledOnErrorResumeNext
@@ -59,3 +59,14 @@ TestFail:
     Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
+
+
+
+
+
+
+
+
+
+
+
