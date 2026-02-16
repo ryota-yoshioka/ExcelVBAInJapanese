@@ -41,7 +41,7 @@ Private Sub TestインデントGet()
     Dim ハンドル As Range
     Set ハンドル = Worksheets("Sheet1").Range("A1:A1")
     Dim ラッパー As New セル範囲
-    ラッパー.初期化 ハンドル
+    ラッパー.初期化する ハンドル
     
     'Act:
     'Assert:
@@ -60,7 +60,57 @@ TestFail:
     Resume TestExit
 End Sub
 
+'@TestMethod("Uncategorized")
+Private Sub Test値Let()
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Dim ハンドル As Range
+    Set ハンドル = Worksheets("Sheet1").Range("A1:A1")
+    Dim ラッパー As New セル範囲
+    ラッパー.初期化する ハンドル
+    
+    'Act:
+    'Assert:
+    ラッパー.値 = "値"
+    Assert.AreEqual ハンドル.value, "値"
+    
+TestExit:
+    '@Ignore UnhandledOnErrorResumeNext
+    On Error Resume Next
+    
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Resume TestExit
+End Sub
 
+'@TestMethod("Uncategorized")
+Private Sub Testオフセットした範囲を取得する()
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Dim 期待値 As Range
+    Set 期待値 = Worksheets("Sheet1").Range("A1:A1")
+    Dim ラッパー As New セル範囲
+    ラッパー.初期化する 期待値
+    
+    'Act:
+    Dim 実際値 As セル範囲
+    Set 実際値 = ラッパー.オフセットした範囲を取得する(0, 0)
+    
+    'Assert:
+    Assert.AreEqual 期待値.Address, 実際値.セルアドレス
+    
+TestExit:
+    '@Ignore UnhandledOnErrorResumeNext
+    On Error Resume Next
+    
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Resume TestExit
+End Sub
 
 
 
