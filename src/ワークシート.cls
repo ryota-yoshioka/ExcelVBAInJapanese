@@ -252,7 +252,7 @@ Public Sub 印刷(Optional ByVal 開始ページ As Variant, Optional ByVal 終了ページ 
     Dim 引数 As String
     
     If Not IsMissing(開始ページ) Then
-        m_ハンドル.PrintOut from:=開始ページ, to:=終了ページ, copies:=コピー数, preview:=このようにプレビュー
+        m_ハンドル.PrintOut From:=開始ページ, To:=終了ページ, Copies:=コピー数, Preview:=このようにプレビュー
     Else
         m_ハンドル.PrintOut
     End If
@@ -286,7 +286,7 @@ Public Sub スペルチェックする(Optional ByVal 言語 As Variant)
     If IsMissing(言語) Then
         m_ハンドル.CheckSpelling
     Else
-        m_ハンドル.CheckSpelling customDictionary:=言語
+        m_ハンドル.CheckSpelling CustomDictionary:=言語
     End If
 End Sub
 

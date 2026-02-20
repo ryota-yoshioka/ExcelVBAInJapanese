@@ -100,7 +100,7 @@ Private Sub Testオフセットした範囲を取得する()
     Set 実際値 = ラッパー.オフセットした範囲を取得する(0, 0)
     
     'Assert:
-    Assert.AreEqual 期待値.Address, 実際値.セルアドレス
+    Assert.AreEqual 期待値.Address, 実際値.アドレス
     
 TestExit:
     '@Ignore UnhandledOnErrorResumeNext
