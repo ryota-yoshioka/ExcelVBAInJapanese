@@ -679,12 +679,12 @@ End Sub
 ''' AddIndent プロパティのラッパー
 ''' インデント有無を取得/設定
 ''' </summary>
-Public Property Get インデント() As Boolean
-    インデント = ラップ元のインスタンス.AddIndent
+Public Property Get 均等割り付け時にインデント追加() As Boolean
+    均等割り付け時にインデント追加 = ラップ元のインスタンス.AddIndent
 End Property
 
-Public Property Let インデント(ByVal インデント有り As Boolean)
-    ラップ元のインスタンス.AddIndent = インデント有り
+Public Property Let 均等割り付け時にインデント追加(ByVal 追加する As Boolean)
+    ラップ元のインスタンス.AddIndent = 追加する
 End Property
 
 ''' <summary>
@@ -698,34 +698,58 @@ End Property
 ''' <summary>
 ''' AddressLocal プロパティのラッパー
 ''' </summary>
+Public Property Get 形式指定アドレス(Optional ByVal RowAbsolute As Variant, Optional ByVal ColumnAbsolute As Variant, Optional ByVal ReferenceStyle As XlReferenceStyle, Optional ByVal External As Variant, Optional ByVal RelativeTo As Variant) As String
+    形式指定アドレス = ラップ元のインスタンス.AddressLocal(RowAbsolute, ColumnAbsolute, ReferenceStyle, External, RelativeTo)
+End Property
 
 ''' <summary>
 ''' AllowEdit プロパティのラッパー
 ''' </summary>
+Public Property Get 範囲の編集を許可()
+    範囲の編集を許可 = ラップ元のインスタンス.AllowEdit
+End Property
 
 ''' <summary>
 ''' Application プロパティのラッパー
 ''' </summary>
+Public Property Get アプリケーション()
+    アプリケーション = ラップ元のインスタンス.Application
+End Property
 
 ''' <summary>
 ''' Areas プロパティのラッパー
 ''' </summary>
+Public Property Get すべての選択範囲()
+    すべての選択範囲 = ラップ元のインスタンス.Areas
+End Property
 
 ''' <summary>
 ''' Borders プロパティのラッパー
 ''' </summary>
+Public Property Get 罫線()
+    罫線 = ラップ元のインスタンス.Borders
+End Property
 
 ''' <summary>
 ''' CellControl プロパティのラッパー
 ''' </summary>
+Public Property Get セルコントロール()
+    セルコントロール = ラップ元のインスタンス.CellControl
+End Property
 
 ''' <summary>
 ''' Cells プロパティのラッパー
 ''' </summary>
+Public Property Get セル()
+    セル = ラップ元のインスタンス.Cells
+End Property
 
 ''' <summary>
 ''' Characters プロパティのラッパー
 ''' </summary>
+Public Property Get 文字範囲()
+    文字範囲 = ラップ元のインスタンス.Characters
+End Property
 
 ''' <summary>
 ''' 列番号を取得する
@@ -738,82 +762,136 @@ End Property
 ''' <summary>
 ''' Columns プロパティのラッパー
 ''' </summary>
+Public Property Get 列()
+    列 = ラップ元のインスタンス.Columns
+End Property
 
 ''' <summary>
 ''' ColumnWidth プロパティのラッパー
 ''' </summary>
+Public Property Get 列の幅()
+    列の幅 = ラップ元のインスタンス.ColumnWidth
+End Property
 
 ''' <summary>
 ''' Comment プロパティのラッパー
 ''' </summary>
+Public Property Get メモ()
+    メモ = ラップ元のインスタンス.Comment
+End Property
 
 ''' <summary>
 ''' CommentThreaded プロパティのラッパー
 ''' </summary>
+Public Property Get コメント()
+    コメント = ラップ元のインスタンス.CommentThreaded
+End Property
 
 ''' <summary>
 ''' セル数を取得する
 ''' Count プロパティのラッパー
 ''' </summary>
-Public Property Get セル数() As Long
-    セル数 = ラップ元のインスタンス.Count
+Public Property Get セルの個数Int() As Integer
+    セルの個数Int = ラップ元のインスタンス.Count
 End Property
 
 ''' <summary>
 ''' CountLarge プロパティのラッパー
 ''' </summary>
+Public Property Get セルの個数() As Long
+    セルの個数 = ラップ元のインスタンス.CountLarge
+End Property
 
 ''' <summary>
 ''' Creator プロパティのラッパー
 ''' </summary>
+Public Property Get 作成アプリケーション()
+    作成アプリケーション = ラップ元のインスタンス.Creator
+End Property
 
 ''' <summary>
 ''' CurrentArray プロパティのラッパー
 ''' </summary>
+Public Property Get 配列範囲()
+    配列範囲 = ラップ元のインスタンス.CurrentArray
+End Property
 
 ''' <summary>
 ''' CurrentRegion プロパティのラッパー
 ''' </summary>
+Public Property Get 現在の選択範囲()
+    現在の選択範囲 = ラップ元のインスタンス.CurrentRegion
+End Property
 
 ''' <summary>
 ''' Dependents プロパティのラッパー
 ''' </summary>
+Public Property Get 参照先()
+    参照先 = ラップ元のインスタンス.Dependents
+End Property
 
 ''' <summary>
 ''' DirectDependents プロパティのラッパー
 ''' </summary>
+Public Property Get 直接の参照先()
+    直接の参照先 = ラップ元のインスタンス.DirectDependents
+End Property
 
 ''' <summary>
 ''' DirectPrecedents プロパティのラッパー
 ''' </summary>
+Public Property Get 直接の参照元()
+    直接の参照元 = ラップ元のインスタンス.DirectPrecedents
+End Property
 
 ''' <summary>
 ''' DisplayFormat プロパティのラッパー
 ''' </summary>
+Public Property Get 表示設定()
+    表示設定 = ラップ元のインスタンス.DisplayFormat
+End Property
 
 ''' <summary>
 ''' End プロパティのラッパー
 ''' </summary>
+Public Property Get 最後のデータがあるセル(ByVal 方向 As XlDirection) As セル範囲
+    Set 最後のデータがあるセル = 新しいインスタンスを生成する(ラップ元のインスタンス.End(方向))
+End Property
 
 ''' <summary>
 ''' EntireColumn プロパティのラッパー
 ''' </summary>
+Public Property Get すべての列()
+    すべての列 = ラップ元のインスタンス.EntireColumn
+End Property
 
 ''' <summary>
 ''' EntireRow プロパティのラッパー
 ''' </summary>
+Public Property Get すべての行()
+    すべての行 = ラップ元のインスタンス.EntireRow
+End Property
 
 ''' <summary>
 ''' Errors プロパティのラッパー
 ''' </summary>
+Public Property Get エラー()
+    エラー = ラップ元のインスタンス.Errors
+End Property
 
 ''' <summary>
 ''' Font プロパティのラッパー
 ''' </summary>
+Public Property Get フォント()
+    フォント = ラップ元のインスタンス.Font
+End Property
 
 ''' <summary>
 ''' FormatConditions プロパティのラッパー
 ''' </summary>
+Public Property Get 条件付き書式()
+    条件付き書式 = ラップ元のインスタンス.FormatConditions
+End Property
 
 ''' <summary>
 ''' 条件付き書式を追加
@@ -847,14 +925,23 @@ End Property
 ''' <summary>
 ''' FormulaArray プロパティのラッパー
 ''' </summary>
+Public Property Get 配列数式()
+    配列数式 = ラップ元のインスタンス.FormulaArray
+End Property
 
 ''' <summary>
 ''' FormulaHidden プロパティのラッパー
 ''' </summary>
+Public Property Get 数式を非表示にする()
+    数式を非表示にする = ラップ元のインスタンス.FormulaHidden
+End Property
 
 ''' <summary>
 ''' FormulaLocal プロパティのラッパー
 ''' </summary>
+Public Property Get 実行時の数式()
+    実行時の数式 = ラップ元のインスタンス.FormulaLocal
+End Property
 
 ''' <summary>
 ''' R1C1参照スタイルの数式を取得/設定する
@@ -874,18 +961,30 @@ End Property
 ''' <summary>
 ''' FormulaR1C1Local プロパティのラッパー
 ''' </summary>
+Public Property Get 実行時のR1C1参照スタイルの数式()
+    実行時のR1C1参照スタイルの数式 = ラップ元のインスタンス.FormulaR1C1Local
+End Property
 
 ''' <summary>
 ''' HasArray プロパティのラッパー
 ''' </summary>
+Public Property Get 配列数式がある()
+    配列数式がある = ラップ元のインスタンス.HasArray
+End Property
 
 ''' <summary>
 ''' HasFormula プロパティのラッパー
 ''' </summary>
+Public Property Get 数式がある()
+    数式がある = ラップ元のインスタンス.HasFormula
+End Property
 
 ''' <summary>
 ''' HasRichDataType プロパティのラッパー
 ''' </summary>
+Public Property Get リッチデータ型である()
+    リッチデータ型である = ラップ元のインスタンス.HasRichDataType
+End Property
 
 ''' <summary>
 ''' 高さを取得/設定する（ポイント単位）
@@ -927,42 +1026,72 @@ End Property
 ''' <summary>
 ''' Hyperlinks プロパティのラッパー
 ''' </summary>
+Public Property Get ハイパーリンク()
+    ハイパーリンク = ラップ元のインスタンス.Hyperlinks
+End Property
 
 ''' <summary>
 ''' ID プロパティのラッパー
 ''' </summary>
+Public Property Get ID()
+    ID = ラップ元のインスタンス.ID
+End Property
 
 ''' <summary>
 ''' IndentLevel プロパティのラッパー
 ''' </summary>
+Public Property Get インデント()
+    インデント = ラップ元のインスタンス.IndentLevel
+End Property
 
 ''' <summary>
 ''' Interior プロパティのラッパー
 ''' </summary>
+Public Property Get Interior()
+    Interior = ラップ元のインスタンス.Interior
+End Property
 
 ''' <summary>
 ''' Item プロパティのラッパー
 ''' </summary>
+Public Property Get Item(ByVal 行番号 As Variant, Optional ByVal 列番号 As Variant) As セル範囲
+    Set Item = 新しいインスタンスを生成する(ラップ元のインスタンス.Item(行番号, 列番号))
+End Property
 
 ''' <summary>
 ''' Left プロパティのラッパー
 ''' </summary>
+Public Property Get Left()
+    Left = ラップ元のインスタンス.Left
+End Property
 
 ''' <summary>
 ''' LinkedDataTypeState プロパティのラッパー
 ''' </summary>
+Public Property Get リンクされたデータ型の状態()
+    リンクされたデータ型の状態 = ラップ元のインスタンス.LinkedDataTypeState
+End Property
 
 ''' <summary>
 ''' ListHeaderRows プロパティのラッパー
 ''' </summary>
+Public Property Get 見出し行の数()
+    見出し行の数 = ラップ元のインスタンス.ListHeaderRows
+End Property
 
 ''' <summary>
 ''' ListObject プロパティのラッパー
 ''' </summary>
+Public Property Get オブジェクトのリスト()
+    オブジェクトのリスト = ラップ元のインスタンス.ListObject
+End Property
 
 ''' <summary>
 ''' LocationInTable プロパティのラッパー
 ''' </summary>
+Public Property Get ピボットテーブル上の位置()
+    ピボットテーブル上の位置 = ラップ元のインスタンス.LocationInTable
+End Property
 
 ''' <summary>
 ''' セルがロックされているかを取得/設定する
@@ -980,10 +1109,16 @@ End Property
 ''' <summary>
 ''' MDX プロパティのラッパー
 ''' </summary>
+Public Property Get MDX式()
+    MDX式 = ラップ元のインスタンス.MDX
+End Property
 
 ''' <summary>
 ''' MergeArea プロパティのラッパー
 ''' </summary>
+Public Property Get 結合している範囲()
+    結合している範囲 = ラップ元のインスタンス.AddressLocal
+End Property
 
 ''' <summary>
 ''' MergeCells プロパティのラッパー
@@ -996,10 +1131,16 @@ End Function
 ''' <summary>
 ''' Name プロパティのラッパー
 ''' </summary>
+Public Property Get 名前()
+    名前 = ラップ元のインスタンス.Name
+End Property
 
 ''' <summary>
 ''' Next プロパティのラッパー
 ''' </summary>
+Public Property Get 次のセル()
+    次のセル = ラップ元のインスタンス.Next
+End Property
 
 ''' <summary>
 ''' 数値の表示形式を取得/設定する
@@ -1016,6 +1157,9 @@ End Property
 ''' <summary>
 ''' NumberFormatLocal プロパティのラッパー
 ''' </summary>
+Public Property Get NumberFormatLocal()
+    NumberFormatLocal = ラップ元のインスタンス.NumberFormatLocal
+End Property
 
 ''' <summary>
 ''' Offset プロパティのラッパー
@@ -1029,75 +1173,123 @@ End Function
 ''' <summary>
 ''' Orientation プロパティのラッパー
 ''' </summary>
+Public Property Get 方向()
+    方向 = ラップ元のインスタンス.Orientation
+End Property
 
 ''' <summary>
 ''' OutlineLevel プロパティのラッパー
 ''' </summary>
+Public Property Get アウトラインレベル()
+    アウトラインレベル = ラップ元のインスタンス.OutlineLevel
+End Property
 
 ''' <summary>
 ''' PageBreak プロパティのラッパー
 ''' </summary>
+Public Property Get 改ページ()
+    改ページ = ラップ元のインスタンス.PageBreak
+End Property
 
 ''' <summary>
 ''' Parent プロパティのラッパー
 ''' </summary>
+Public Property Get 親オブジェクト()
+    親オブジェクト = ラップ元のインスタンス.Parent
+End Property
 
 ''' <summary>
 ''' Phonetic プロパティのラッパー
 ''' </summary>
+Public Property Get ふりがな()
+    ふりがな = ラップ元のインスタンス.Phonetic
+End Property
 
 ''' <summary>
 ''' Phonetics プロパティのラッパー
 ''' </summary>
+Public Property Get ふりがなのコレクション()
+    ふりがなのコレクション = ラップ元のインスタンス.Phonetics
+End Property
 
 ''' <summary>
 ''' PivotCell プロパティのラッパー
 ''' </summary>
+Public Property Get PivotCell()
+    PivotCell = ラップ元のインスタンス.PivotCell
+End Property
 
 ''' <summary>
 ''' PivotField プロパティのラッパー
 ''' </summary>
+Public Property Get PivotField()
+    PivotField = ラップ元のインスタンス.PivotField
+End Property
 
 ''' <summary>
 ''' PivotItem プロパティのラッパー
 ''' </summary>
+Public Property Get PivotItem()
+    PivotItem = ラップ元のインスタンス.PivotItem
+End Property
 
 ''' <summary>
 ''' PivotTable プロパティのラッパー
 ''' </summary>
+Public Property Get PivotTable()
+    PivotTable = ラップ元のインスタンス.PivotTable
+End Property
 
 ''' <summary>
 ''' Precedents プロパティのラッパー
 ''' </summary>
+Public Property Get 参照元()
+    参照元 = ラップ元のインスタンス.Precedents
+End Property
 
 ''' <summary>
 ''' PrefixCharacter プロパティのラッパー
 ''' </summary>
+Public Property Get 接頭辞()
+    接頭辞 = ラップ元のインスタンス.PrefixCharacter
+End Property
 
 ''' <summary>
 ''' Previous プロパティのラッパー
 ''' </summary>
+Public Property Get 前のセル()
+    前のセル = ラップ元のインスタンス.Previous
+End Property
 
 ''' <summary>
 ''' QueryTable プロパティのラッパー
 ''' </summary>
+Public Property Get QueryTable()
+    QueryTable = ラップ元のインスタンス.QueryTable
+End Property
 
 ''' <summary>
 ''' Range プロパティのラッパー
 ''' </summary>
+Public Property Get セル範囲(ByVal セル1 As Variant, Optional ByVal セル2 As Variant) As セル範囲
+    Set セル範囲 = 新しいインスタンスを生成する(ラップ元のインスタンス.Range(セル1, セル2))
+End Property
 
 ''' <summary>
 ''' ReadingOrder プロパティのラッパー
 ''' </summary>
+Public Property Get 右から左()
+    右から左 = ラップ元のインスタンス.ReadingOrder
+End Property
 
 ''' <summary>
 ''' Resize プロパティのラッパー
 ''' セルのサイズを変更した新しい Range を取得
 ''' </summary>
-Public Function サイズを変更した範囲を取得する(新しい範囲の行数 As Long, 新しい範囲の列数 As Long) As セル範囲
+Public Function リサイズする(新しい範囲の行数 As Long, 新しい範囲の列数 As Long) As セル範囲
     Dim 戻り値のオブジェクト As Range
     Set 戻り値のオブジェクト = ラップ元のインスタンス.Resize(新しい範囲の行数, 新しい範囲の列数)
-    Set サイズを変更した範囲を取得する = 新しいインスタンスを生成する(戻り値のオブジェクト)
+    Set リサイズする = 新しいインスタンスを生成する(戻り値のオブジェクト)
 End Function
 
 ''' <summary>
@@ -1111,62 +1303,101 @@ End Property
 ''' <summary>
 ''' RowHeight プロパティのラッパー
 ''' </summary>
+Public Property Get 行の高さ()
+    行の高さ = ラップ元のインスタンス.RowHeight
+End Property
 
 ''' <summary>
 ''' Rows プロパティのラッパー
 ''' </summary>
+Public Property Get 行()
+    行 = ラップ元のインスタンス.Rows
+End Property
 
 ''' <summary>
 ''' ServerActions プロパティのラッパー
 ''' </summary>
+Public Property Get ServerActions()
+    ServerActions = ラップ元のインスタンス.ServerActions
+End Property
 
 ''' <summary>
 ''' ShowDetail プロパティのラッパー
 ''' </summary>
+Public Property Get アウトラインが展開されている()
+    アウトラインが展開されている = ラップ元のインスタンス.ShowDetail
+End Property
 
 ''' <summary>
 ''' ShrinkToFit プロパティのラッパー
 ''' </summary>
+Public Property Get 縮小して全体を表示()
+    縮小して全体を表示 = ラップ元のインスタンス.ShrinkToFit
+End Property
 
 ''' <summary>
 ''' SoundNote プロパティのラッパー
 ''' </summary>
+Public Property Get SoundNote()
+    SoundNote = ラップ元のインスタンス.SoundNote
+End Property
 
 ''' <summary>
 ''' SparklineGroups プロパティのラッパー
 ''' </summary>
+Public Property Get スパークライングループ()
+    スパークライングループ = ラップ元のインスタンス.SparklineGroups
+End Property
 
 ''' <summary>
 ''' Style プロパティのラッパー
 ''' </summary>
+Public Property Get 表示形式()
+    表示形式 = ラップ元のインスタンス.Style
+End Property
 
 ''' <summary>
 ''' Summary プロパティのラッパー
 ''' </summary>
+Public Property Get アウトラインの集計である()
+    アウトラインの集計である = ラップ元のインスタンス.Summary
+End Property
 
 ''' <summary>
 ''' 左上隅セルのテキストを取得する
 ''' Text プロパティのラッパー
 ''' </summary>
-Public Property Get テキスト() As String
-    テキスト = ラップ元のインスタンス.Text
+Public Property Get 文字列() As String
+    文字列 = ラップ元のインスタンス.Text
 End Property
 
 ''' <summary>
 ''' Top プロパティのラッパー
 ''' </summary>
+Public Property Get 上端からの距離()
+    上端からの距離 = ラップ元のインスタンス.Top
+End Property
 
 ''' <summary>
 ''' UseStandardHeight プロパティのラッパー
 ''' </summary>
+Public Property Get 標準の高さである()
+    標準の高さである = ラップ元のインスタンス.UseStandardHeight
+End Property
 
 ''' <summary>
 ''' UseStandardWidth プロパティのラッパー
 ''' </summary>
+Public Property Get 標準の幅である()
+    標準の幅である = ラップ元のインスタンス.UseStandardWidth
+End Property
 
 ''' <summary>
 ''' Validation プロパティのラッパー
 ''' </summary>
+Public Property Get データの入力規則()
+    データの入力規則 = ラップ元のインスタンス.Validation
+End Property
 
 ''' <summary>
 ''' value プロパティのラッパー
@@ -1183,7 +1414,11 @@ End Property
 
 ''' <summary>
 ''' Value2 プロパティのラッパー
+''' Currency データ型と Date データ型が使用されない点です。 倍精度浮動小数点型 (Double) を使用する
 ''' </summary>
+Public Property Get Value2()
+    Value2 = ラップ元のインスタンス.Value2
+End Property
 
 ''' <summary>
 ''' 縦位置を取得/設定（-4107: 上, -4108: 中央, -4161: 下）
@@ -1214,6 +1449,9 @@ End Property
 ''' <summary>
 ''' Worksheet プロパティのラッパー
 ''' </summary>
+Public Property Get ワークシート()
+    ワークシート = ラップ元のインスタンス.Worksheet
+End Property
 
 ''' <summary>
 ''' 折り返して全体を表示するを取得/設定
@@ -1231,4 +1469,7 @@ End Property
 ''' <summary>
 ''' XPath プロパティのラッパー
 ''' </summary>
+Public Property Get XPath()
+    XPath = ラップ元のインスタンス.XPath
+End Property
 
